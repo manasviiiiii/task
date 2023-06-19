@@ -10,6 +10,7 @@ function Home() {
   const [filters, setFilters] = useState({
     search: "",
     genre: "",
+    language: "",
   });
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
@@ -29,7 +30,7 @@ function Home() {
 
   useEffect(() => {
     getData();
-  }, [filters.genre]);
+  }, [filters.genre, filters.language]);
 
   return (
     <div>
@@ -53,6 +54,11 @@ function Home() {
               </h1>
 
               <hr />
+
+              <div className="flex justify-between text-sm">
+                <span>Language</span>
+                <span className="capitalize">{movie?.language}</span>
+              </div>
 
               <div className="flex justify-between text-sm">
                 <span>Views</span>
