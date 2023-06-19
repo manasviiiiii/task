@@ -7,7 +7,11 @@ import { useNavigate } from "react-router-dom";
 import Filters from "../../components/Filters";
 
 function Home() {
-  const [filters, setFilters] = useState({ search: "" , genre: "" , language: "" });
+  const [filters, setFilters] = useState({
+    search: "",
+    genre: "",
+    language: "",
+  });
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
 
@@ -26,14 +30,11 @@ function Home() {
 
   useEffect(() => {
     getData();
-  }, [filters.genre , filters.language]);
+  }, [filters.genre, filters.language]);
 
   return (
     <div>
-      <Filters 
-        filters={filters}
-        setFilters={setFilters}
-       />
+      <Filters filters={filters} setFilters={setFilters} />
       <div className="grid grid-cols-1 sm-grid-cols-2 lg:grid-cols-4 gap-10 text-gray-600">
         {movies.map((movie) => {
           return (
@@ -57,6 +58,11 @@ function Home() {
               <div className="flex justify-between text-sm">
                 <span>Language</span>
                 <span className="capitalize">{movie?.language}</span>
+              </div>
+
+              <div className="flex justify-between text-sm">
+                <span>Views</span>
+                <span className="capitalize">{movie?.views}</span>
               </div>
 
               <div className="flex justify-between text-sm">

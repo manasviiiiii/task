@@ -41,6 +41,7 @@ router.get("/", async (req, res) => {
 
 // get movie by id and update views
 router.get("/:id", async (req, res) => {
+  const movieId = new mongoose.Types.ObjectId(req.body.movie);
   try {
     const movie = await Movie.findById(req.params.id)
       .populate("hero")
@@ -49,7 +50,7 @@ router.get("/:id", async (req, res) => {
       .populate("cast")
       .populate("createdBy");
     await Movie.findByIdAndUpdate(
-      _id,
+      id,
       {
         $inc: { views: 1 },
       },
