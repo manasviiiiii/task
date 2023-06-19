@@ -4,7 +4,7 @@ import { antValidationError } from "../../../helpers";
 import { useDispatch } from "react-redux";
 import { SetLoading } from "../../../redux/loadersSlice";
 import { GetAllArtists } from "../../../apis/artists";
-import { AddMovie, GetMovieById, UpdateMovie } from "../../../apis/movies";
+import { AddMovie, GetmovieById, UpdateMovie } from "../../../apis/movies";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import moment from "moment";
@@ -38,7 +38,7 @@ function MovieForm() {
   const getMovie = async (id) => {
     try {
       dispatch(SetLoading(true));
-      const response = await GetMovieById(id);
+      const response = await GetmovieById(id);
       response.data.releaseDate = moment(response.data.releaseDate).format(
         "YYYY-MM-DD"
       );

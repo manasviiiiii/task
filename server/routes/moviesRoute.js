@@ -61,6 +61,20 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: error.message, success: false });
   }
 });
+router.get("/add-views/:id", async (req, res) => {
+  try {
+    const movie = await Movie.findById(req.params.id)
+      .populate("hero")
+      .populate("heroine")
+      .populate("director")
+      .populate("cast")
+      .populate("createdBy");
+
+    res.status(200).json({ data: movie, success: true });
+  } catch (error) {
+    res.status(500).json({ message: error.message, success: false });
+  }
+});
 
 // update movie
 router.put("/:id", authMiddleware, async (req, res) => {

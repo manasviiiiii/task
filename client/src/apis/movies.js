@@ -22,6 +22,12 @@ export const GetMovieById = async (id) => {
     endPoint: `/api/movies/${id}`,
   });
 };
+export const GetmovieById = async (id) => {
+  return await apiRequest({
+    method: "GET",
+    endPoint: `/api/movies/add-views/${id}`,
+  });
+};
 
 export const UpdateMovie = async (id, data) => {
   return await apiRequest({
@@ -44,4 +50,3 @@ export const GetMoviesByArtistId = async (id) => {
     endPoint: `/api/movies/get-movies-by-artist/${id}`,
   });
 };
-
