@@ -6,7 +6,6 @@ import { antValidationError } from "../../helpers";
 import { useDispatch } from "react-redux";
 import { SetLoading } from "../../redux/loadersSlice";
 
-
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,10 +34,10 @@ function Login() {
       <div className="bg-primary flex flex-col items-center justify-center">
         <div>
           <h1 className="text-6xl text-orange-500 font-semibold">
-            Welcome To SMW
+            Welcome To MIW
           </h1>
           <span className="text-md text-gray-300 mt-2">
-            One stop for all your movie reviews , ratings and recommendations
+            One stop for viewing , rating and reviewing my images
           </span>
         </div>
       </div>

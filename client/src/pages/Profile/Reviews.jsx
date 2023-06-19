@@ -49,7 +49,7 @@ function Reviews() {
 
   const columns = [
     {
-      title: "Movie",
+      title: "Image",
       dataIndex: "movie",
       render: (text, record) => record.movie.name,
     },
