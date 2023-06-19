@@ -34,10 +34,10 @@ function Login() {
       <div className="bg-primary flex flex-col items-center justify-center">
         <div>
           <h1 className="text-6xl text-orange-500 font-semibold">
-            Welcome To MIW
+            Welcome To SMW
           </h1>
           <span className="text-md text-gray-300 mt-2">
-            One stop for viewing , rating and reviewing my images
+            One stop for all your movie reviews , ratings and recommendations
           </span>
         </div>
       </div>
