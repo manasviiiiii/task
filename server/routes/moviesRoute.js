@@ -49,13 +49,6 @@ router.get("/:id", async (req, res) => {
       .populate("director")
       .populate("cast")
       .populate("createdBy");
-    await Movie.findByIdAndUpdate(
-      req.params.id,
-      {
-        $inc: { views: 1 },
-      },
-      { new: true }
-    );
 
     res.status(200).json({ data: movie, success: true });
   } catch (error) {
