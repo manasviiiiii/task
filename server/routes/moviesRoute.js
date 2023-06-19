@@ -49,14 +49,15 @@ router.get("/:id", async (req, res) => {
       .populate("cast")
       .populate("createdBy");
 
+    res.status(200).json({ data: movie, success: true });
+
     await Movie.findByIdAndUpdate(
-      id,
+      _id,
       {
         $inc: { views: 1 },
       },
       { new: true }
     );
-    res.status(200).json({ data: movie, success: true });
   } catch (error) {
     res.status(500).json({ message: error.message, success: false });
   }
