@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
       .populate("cast")
       .populate("createdBy");
     await Movie.findByIdAndUpdate(
-      id,
+      req.params.id,
       {
         $inc: { views: 1 },
       },
